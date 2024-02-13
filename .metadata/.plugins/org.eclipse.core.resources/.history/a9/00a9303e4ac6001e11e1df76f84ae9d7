@@ -1,0 +1,22 @@
+package com.study.array.repository;
+
+import com.study.array.entity.DataObj;
+
+public class DataRepository {
+	private static DataRepository instance;
+	
+	private DataRepository() {}
+	
+	public static DataRepository getInstance() {
+		if(instance == null) {
+			instance = new DataRepository();
+		}
+		return instance;
+	}
+	
+	public int addData(DataObj dataObj) {
+		return 0;
+	}
+	
+	
+}

@@ -1,0 +1,14 @@
+package com.study.array.service;
+
+public class DataService {
+	private static DataService instance;
+	
+	private DataService() {}
+	
+	public static DataService getInstance() {
+		if(instance == null) {
+			instance = new DataService();
+		}
+		return instance;
+	}
+}

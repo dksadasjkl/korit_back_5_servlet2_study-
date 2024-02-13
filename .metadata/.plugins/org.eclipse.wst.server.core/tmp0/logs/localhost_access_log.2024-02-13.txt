@@ -1,0 +1,13 @@
+127.0.0.1 - - [13/Feb/2024:10:58:23 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:10:58:23 +0900] "GET /data_array/data/addition HTTP/1.1" 405 825
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:10:58:23 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:11:04:25 +0900] "POST /data_array/data/addition HTTP/1.1" 201 56
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:11:04:41 +0900] "OPTIONS /data_array/data/addition HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:11:04:41 +0900] "POST /data_array/data/addition HTTP/1.1" 201 56
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:11:15:04 +0900] "OPTIONS /data_array/data/addition HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:11:15:05 +0900] "POST /data_array/data/addition HTTP/1.1" 201 56
+127.0.0.1 - - [13/Feb/2024:12:33:19 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:12:33:19 +0900] "GET /insert_and_select/data/addition HTTP/1.1" 405 825
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:12:44:23 +0900] "GET /insert_and_select/data/addition HTTP/1.1" 405 825
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:12:50:06 +0900] "POST /insert_and_select/data/addition HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [13/Feb/2024:14:11:55 +0900] "POST /insert_and_select/data/addition HTTP/1.1" 200 -

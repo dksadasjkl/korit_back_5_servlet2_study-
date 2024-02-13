@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;DBConnectionMgr.java&apos; to &apos;data_array/src/main/java/com.study.array.config&apos;&#x0D;&#x0A;- Original project: &apos;korit_back_5_servlet_study&apos;&#x0D;&#x0A;- Destination element: &apos;data_array/src/main/java/com.study.array.config&apos;&#x0D;&#x0A;- Original element: &apos;com.study.servlet_study.config.DBConnectionMgr.java&apos;" description="Copy compilation unit" destination="=data_array/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.study.array.config" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.study.servlet_study.config{DBConnectionMgr.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1707372775873" units="1" version="1.0"/>
+</session>
