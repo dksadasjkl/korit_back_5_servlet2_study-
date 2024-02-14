@@ -9,10 +9,12 @@
 			<item value="com.study.servlet_study"/>
 		</list>
 		<list key="name">
+			<item value="product"/>
 			<item value="insert_and_select"/>
 			<item value="servlet_study"/>
 		</list>
 		<list key="artifactId">
+			<item value="product"/>
 			<item value="insert_and_select"/>
 			<item value="data_array"/>
 			<item value="data_arra"/>

@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\aws\\workspace\\korit_back_5_servlet_study\\.git;
-GitRepositoriesView.GitDirectories.relative=korit_back_5_servlet_study\\.git;
+GitRepositoriesView.GitDirectories=C\:\\aws\\workspace\\korit_back_5_servlet_study\\.git;C\:\\aws\\workspace\\.git;
+GitRepositoriesView.GitDirectories.relative=korit_back_5_servlet_study\\.git;.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

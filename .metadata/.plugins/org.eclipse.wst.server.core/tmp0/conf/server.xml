@@ -160,7 +160,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\korit_back_5_servlet_study" path="/servlet_study" reloadable="true" source="org.eclipse.jst.jee.server:korit_back_5_servlet_study"/><Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\data_array" path="/data_array" reloadable="true" source="org.eclipse.jst.jee.server:data_array"/><Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\insert_and_select" path="/insert_and_select" reloadable="true" source="org.eclipse.jst.jee.server:insert_and_select"/></Host>
+      <Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\aws\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\product" path="/product" reloadable="true" source="org.eclipse.jst.jee.server:product"/></Host>
     </Engine>
   </Service>
 </Server>
