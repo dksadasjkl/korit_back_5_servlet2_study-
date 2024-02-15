@@ -4,18 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.mysql.cj.jdbc.Driver;
 import com.study.product.config.DBConfig;
-import com.study.product.entity.Product;
+import com.study.product.config.DBConnectionMgr;
+import com.study.product.vo.ProductVo;
 
 public class ProductDao {
 	private static ProductDao instance;
+	private DBConnectionMgr pool;
 	
 	private ProductDao() {
-		
+		pool = DBConnectionMgr.getInstance();
 	}
 	
 	public static ProductDao getInstance() {
@@ -25,131 +28,95 @@ public class ProductDao {
 		return instance;
 	}
 	
-	public Product findProductName(String name) {
+	public ProductVo findProductName(String productName) {
+		ProductVo productVo = null;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		Product product = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBConfig.URL, DBConfig.USERNAME, DBConfig.PASSWORD);
-			
+			con = pool.getConnection();
 			String sql = "select * from product_tb where product_name = ?";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, productName);
 			rs = pstmt.executeQuery();
 			
-			while (rs.next()) {
-				product = Product.builder()
+			if (rs.next()) {
+				productVo = ProductVo.builder()
 						.productId(rs.getInt(1))
 						.productName(rs.getString(2))
 						.productPrice(rs.getInt(3))
 						.productSize(rs.getString(4))
 						.build();
 			}
-			
-		} catch (Exception e) {
+ 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (con != null) {
-					con.close();
-				}
-				if (rs != null) {
-					rs.close();
-				}
-				if (pstmt != null) {
-					pstmt.close();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			pool.freeConnection(con, pstmt, rs);
 		}
-		return product;
+		return productVo;
 	}
 	
 	
-	public int savaProduct(Product product) {
+	
+	public int savaProduct(ProductVo productVo) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		int savacount = 0;
+		int successCount = 0;
+		ResultSet rs = null;
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBConfig.URL, DBConfig.USERNAME, DBConfig.PASSWORD);
-			
-			String sql = "insert into product_tb(product_name, product_price, product_size) values (?, ?, ?)";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, product.getProductName());
-			pstmt.setInt(2, product.getProductPrice());
-			pstmt.setString(3, product.getProductSize());
-			savacount = pstmt.executeUpdate();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (con != null) {
-					con.close();
-				} 
-				if (pstmt != null) {
-					pstmt.close();
+				con = pool.getConnection();
+				String sql = "insert into product_tb values(0, ?, ?, ?)";
+				pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); //키값 가져옴
+				pstmt.setString(1, productVo.getProductName());
+				pstmt.setInt(2, productVo.getProductPrice());
+				pstmt.setString(3, productVo.getProductSize());
+				
+				successCount = pstmt.executeUpdate();
+				rs = pstmt.getGeneratedKeys(); //해당 키값 전부
+				if(rs.next()) {
+					productVo.setProductId(rs.getInt(1)); // 순서대로 VoId에 넣는다
 				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
+			} finally {
+				pool.freeConnection(con, pstmt, rs);
 			}
-		}
 		
-		return savacount;
+		return successCount;
 	}
 	
 	
-	public List<Product> getList() {
+	public List<ProductVo> getProductLsit() {
+		List<ProductVo> list = new ArrayList<>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<Product> products = new ArrayList<>();
 		
 		
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBConfig.URL, DBConfig.USERNAME, DBConfig.PASSWORD);
-			
+			con = pool.getConnection();
 			String sql = "select * from product_tb";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				Product product = Product.builder()
+				ProductVo productVo = ProductVo.builder()
 						.productId(rs.getInt(1))
 						.productName(rs.getString(2))
 						.productPrice(rs.getInt(3))
 						.productSize(rs.getString(4))
 						.build();
-				products.add(product);
+				list.add(productVo);
 			}
 			
 		} catch (Exception e) {
-			
-		} 
-			
-		finally {
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (con != null) {
-					con.close();
-				} 
-				if (pstmt != null) {
-					pstmt.close();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			e.printStackTrace();
+		} finally {
+			pool.freeConnection(con, pstmt, rs);
 		}	
-		
-		return products;
+		return list;
 	}
 }
 
