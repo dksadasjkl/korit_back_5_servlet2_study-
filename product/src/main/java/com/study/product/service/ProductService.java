@@ -31,9 +31,9 @@ public class ProductService {
 	}
 	
 	public InsertProductRsepDto addProduct(InsertProductReqDto insertProductReqDto) {
-		ProductVo productVo = insertProductReqDto.toVo();
+		ProductVo productVo = insertProductReqDto.toVo(); 
 		
-		int successCount = productDao.savaProduct(productVo);
+		int successCount = productDao.savaProduct(productVo); 
 		
 		return productVo.toInsertDto(successCount);
 		

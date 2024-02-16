@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="com.study.servlet_study.servlet.ProductServlet"/>
-    <fullyQualifiedTypeName name="com.study.servlet_study.service.ProductService"/>
-    <fullyQualifiedTypeName name="com.study.servlet_study.entity.Product"/>
-    <fullyQualifiedTypeName name="com.study.servlet_study.repository.ProductRepository"/>
     <fullyQualifiedTypeName name="java.util.function.Consumer"/>
     <fullyQualifiedTypeName name="com.study.servlet_study.test.Print"/>
     <fullyQualifiedTypeName name="com.study.servlet_study.config.DBConnectionMgr"/>
@@ -30,16 +26,12 @@
     <fullyQualifiedTypeName name="com.mysql.cj.jdbc.Driver"/>
     <fullyQualifiedTypeName name="java.sql.DriverManager"/>
     <fullyQualifiedTypeName name="com.study.product.config.DBConfig"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
     <fullyQualifiedTypeName name="com.study.product.entity.Product"/>
     <fullyQualifiedTypeName name="com.study.product.filter.CommonFilter"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="com.study.product.dto.InsertUserReqDto"/>
-    <fullyQualifiedTypeName name="com.study.product.utils.RequestUtil"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
     <fullyQualifiedTypeName name="com.google.gson.Gson"/>
-    <fullyQualifiedTypeName name="java.util.HashMap"/>
-    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="com.study.product.config.DBConnectionMgr"/>
     <fullyQualifiedTypeName name="java.lang.Class"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
@@ -49,15 +41,23 @@
     <fullyQualifiedTypeName name="com.study.product.dao.ProductDao"/>
     <fullyQualifiedTypeName name="java.sql.Statement"/>
     <fullyQualifiedTypeName name="com.study.product.dto.InsertProductRsepDto"/>
-    <fullyQualifiedTypeName name="com.study.product.service.ProductService"/>
-    <fullyQualifiedTypeName name="lombok.Builder"/>
-    <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.study.product.dto.SearchProductRespDto"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="com.study.product.vo.ProductVo"/>
-    <fullyQualifiedTypeName name="com.study.product.utils.ResponseEntity"/>
     <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+    <fullyQualifiedTypeName name="com.study.product.service.ProductService"/>
+    <fullyQualifiedTypeName name="lombok.Builder"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="com.study.product.utils.RequestUtil"/>
+    <fullyQualifiedTypeName name="com.study.product.dto.UserDto"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.study.product.utils.ResponseEntity"/>
 </qualifiedTypeNameHistroy>
